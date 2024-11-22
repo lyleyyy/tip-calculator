@@ -44,8 +44,13 @@ function App() {
           onChange={handleRatesChange}
         />
       </div>
-      <OutputComponent billValue={billValue} serviceRates={serviceRates} />
-      <Button onClick={handleReset} />
+
+      {billValue > 0 && (
+        <>
+          <OutputComponent billValue={billValue} serviceRates={serviceRates} />
+          <Button onClick={handleReset} />
+        </>
+      )}
     </div>
   );
 }
